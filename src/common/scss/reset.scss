@@ -1,4 +1,160 @@
-html, body {
-  width: 100%;
-  height: 100%;
+/*全局css样式表*/
+html {
+	font-size: 16px;
+}
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+dl,
+dd,
+ul,
+ol,
+form,
+input,
+textarea,
+th,
+td,
+select {
+	margin: 0;
+	padding: 0;
+	font-weight: 500;
+}
+
+em {
+	font-style: normal;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+img {
+	border: none;
+	vertical-align: top;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+input,
+textarea {
+	outline: none;
+}
+
+iframe {
+	border: none;
+}
+
+textarea {
+	resize: none;
+	overflow: auto;
+}
+
+.color {
+	color: #008cee;
+}
+.bgColor {
+	background-color: #008cee;
+}
+.borderColor {
+	border: 1px solid #008cee;
+}
+
+.clear:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+.pull-left {
+	float: left;
+}
+.pull-right {
+	float: right;
+}
+
+.textCenter {
+	text-align: center;
+}
+.textLeft {
+	text-align: left;
+}
+.textRight {
+	text-align: right;
+}
+
+.verMiddle {
+	vertical-align: middle;
+}
+
+.relative {
+	position: relative;
+}
+.absolute {
+	position: absolute;
+}
+.fixed {
+	position: fixed;
+}
+
+.boxCenter {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+}
+
+.flexBox {
+	display: flex;
+}
+.flexColBox {
+	display: flex;
+	flex-direction: column;
+}
+.flexOne {
+	flex: 1;
+}
+
+.hidden {
+	overflow: hidden;
+}
+.scroll {
+	overflow: auto;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.h100 {
+	height: 100%;
+}
+
+body,
+html,
+#gmSystem {
+	width: 100%;
+	height: 100%;
+	overflow: auto !important;
+	font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif !important;
+}
+
+
+.ivu-table-small .ivu-table-cell {
+	padding: 0 5px;
 }

@@ -7,9 +7,9 @@ import store from './store'
 import App from './App'
 import iView from 'iView'
 import axios from 'axios'
-// import 'iview/dist/styles/iview.css'
 
 import 'common/scss/reset'
+// import 'iview/dist/styles/iview.css'
 
 Vue.use(VueRouter)
 Vue.use(iView)
