@@ -10,7 +10,18 @@ const routes = [
   {
     path: '/home',
     component: () => import(/* webpackChunkName: 'home' */ 'components/home/home'),
-    props: true
+    children: [
+      {
+        path: '/home/echartsList',
+        component: () => import('components/echartsList/index'),
+        children: [
+          {
+            path: '/home/echartsList/listcontent',
+            component: () => import('components/echartsList/listcontent')
+          }
+        ]
+      }
+    ]
   }
 ]
 
