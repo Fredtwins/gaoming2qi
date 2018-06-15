@@ -8,7 +8,7 @@ const routes = [
     component: () => import(/* webpackChunkName: 'login' */ 'components/login/login')
   },
   {
-    path: '/home/',
+    path: '/home',
     component: () => import(/* webpackChunkName: 'home' */ 'components/home/home'),
     props: true
   }

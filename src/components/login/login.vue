@@ -33,7 +33,7 @@ export default {
   methods: {
     // 用户登录
     submit () {
-
+      this.$router.push('/home')
     }
   }
 }

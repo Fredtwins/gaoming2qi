@@ -54,6 +54,14 @@ const config = {
         test: /\.vue$/,
         loader: 'vue-loader'
       },
+      //编译css
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
       {
         // 编译js文件时, 使用babel-loader, 帮助我们把ES6的语法变成浏览器可读的ES5
         test: /\.js$/,

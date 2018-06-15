@@ -1,13 +1,17 @@
 <template>
   <div class="home">
-    home
+    <Top-Nav></Top-Nav>  
   </div>
 </template>
 
 <script>
+  import { TopNav } from '../topNav/topNav.vue'
   // import { mapState, mapGetters, mapMutations } from 'vuex'
   // import { Static } from 'api/config'
   export default {
+    component: {
+      TopNav
+    },
     // props: {
     //   id: {
     //     type: String
@@ -29,10 +33,7 @@
       // console.log(this.id)
     },
     methods: {
-      changeUser () {
-        // this.SET_USER('Zzc')
-        // this.$store.state.user = 'Zzc'
-      }
+
     }
   }
 </script>

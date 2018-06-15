@@ -5,11 +5,11 @@ import VueRouter from 'vue-router'
 import router from './router'
 import store from './store'
 import App from './App'
-import iView from 'iView'
+import iView from 'iview'
 import axios from 'axios'
 
 import 'common/scss/reset'
-// import 'iview/dist/styles/iview.css'
+import 'iview/dist/styles/iview.css'
 
 Vue.use(VueRouter)
 Vue.use(iView)
