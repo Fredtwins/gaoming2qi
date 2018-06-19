@@ -1,55 +1,73 @@
 <template>
     <div class="leftnav">
         <Col span="3">
-            <Menu :theme="theme2" active-name="1-2" :open-names="['1']">
-                <Submenu name="1">
-                    <template slot="title">
-                        <Icon type="ios-paper"></Icon>
-                        内容管理
-                    </template>
-                    <MenuItem name="1-1">文章管理</MenuItem>
-                    <MenuItem name="1-2">评论管理</MenuItem>
-                    <MenuItem name="1-3">举报管理</MenuItem>
-                </Submenu>
-                <Submenu name="2">
-                    <template slot="title">
-                        <Icon type="ios-people"></Icon>
-                        用户管理
-                    </template>
-                    <MenuItem name="2-1">新增用户</MenuItem>
-                    <MenuItem name="2-2">活跃用户</MenuItem>
-                </Submenu>
-                <Submenu name="3">
-                    <template slot="title">
-                        <Icon type="stats-bars"></Icon>
-                        统计分析
-                    </template>
-                    <MenuGroup title="使用">
-                        <MenuItem name="3-1">新增和启动</MenuItem>
-                        <MenuItem name="3-2">活跃分析</MenuItem>
-                        <MenuItem name="3-3">时段分析</MenuItem>
-                    </MenuGroup>
-                    <MenuGroup title="留存">
-                        <MenuItem name="3-4">用户留存</MenuItem>
-                        <MenuItem name="3-5">流失用户</MenuItem>
-                    </MenuGroup>
-                </Submenu>
-            </Menu>
+        <Menu active-name="multiple" width="auto" @on-select="changeActive">
+            <Submenu name="1" v-for="(item,index) in dataArr" :key="index">
+                <template slot="title">
+                    <span>{{item.text}}</span>
+                </template>
+                <Menu-item v-for="(i,index) in dowArr" :key="index" @click="changeActive(i.link)" style="cursor:pointer" :name="i.name">{{i.text}}</Menu-item>
+                </MenuGroup>
+            </Submenu>
+        </Menu>
+        </aside>
         </Col>
     </div>
 </template>
 
 <script>
+/* eslint-disable */
 export default {
-  data () {
-    return {
-      theme2: 'light',
-      menList: []
+    data() {
+        return {
+            theme: 'light',
+            acName: "",
+            opName: [],
+            dataArr: [
+                {
+                    text: '管理',
+                    name: '1',
+                }
+            ],
+            dowArr: [
+                {
+                    text: '图形管理',
+                    name: '1-1',
+                    link: 'listcontent',
+                },
+                {
+                    text: '数据图层',
+                    name: '1-2',
+                    link: '',
+                },
+                {
+                    text: '折线图',
+                    name: '1-3',
+                    link: '',
+                },
+                {
+                    text: '风力风向',
+                    name: '1-4',
+                    link: '',
+                }
+            ]
+        }
+    },
+    methods: {
+        changeActive(name) {
+            console.log(name);
+            if (name) {
+                this.$router.push('/home/echartsList/' + name);
+            }
+        }
     }
-  }
 }
+/* eslint-disable */
 </script>
 
 <style lang="scss" scoped>
-
+.leftnav {
+	height: 100%;
+	background-color: #41b0ff;
+}
 </style>

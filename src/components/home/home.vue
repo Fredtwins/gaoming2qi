@@ -60,7 +60,7 @@ export default {
 <style lang="scss" scoped>
 .home {
   width: 100%;
-  height:3.9rem;
+  height:3.8rem;
   color: green;
   .home-header {
     height: 100%;
