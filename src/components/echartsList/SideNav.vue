@@ -1,6 +1,5 @@
 <template>
     <div class="leftnav">
-        <i-col span="3">
             <Menu active-name="multiple" width="auto" @on-select="clickFn">
                 <Submenu name="1" v-for="item in dataArr" :key="item.index">
                     <template slot="title">
@@ -10,7 +9,6 @@
                     </MenuGroup>
                 </Submenu>
             </Menu>
-        </i-col>
     </div>
 </template>
 
@@ -55,7 +53,6 @@ export default {
     },
     methods: {
         clickFn(name) {
-            console.log(name);
             this.$router.push('/home/echartsList/' + name);
         }
     }
@@ -65,9 +62,9 @@ export default {
 
 <style lang="scss" scoped>
 @import url('../../common/scss/reset.scss');
-.leftnav {
-    // width: 100%;
-    height: 100%; 
-    position: relative;
-}
+// .leftnav {
+//     width: 100%;
+//     height: 100%; // background-color: #41b0ff;
+//     position: relative;
+// }
 </style>

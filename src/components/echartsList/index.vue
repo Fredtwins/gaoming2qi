@@ -1,8 +1,12 @@
 <template>
-    <div class="index" style="height:100%">
+    <div class="index">
+      <i-col span="3">
         <side-nav></side-nav>
+      </i-col>
         <hr>
+        <i-col span="21">
         <router-view></router-view>
+        </i-col>
     </div>
 </template>
 
@@ -19,7 +23,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.index {
-  height: 3.8rem;
-}
+
 </style>
