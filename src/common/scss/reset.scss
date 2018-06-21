@@ -65,7 +65,8 @@ textarea {
 }
 
 .color {
-	color: #008cee;
+	// color: #008cee;
+	color:#fff;
 }
 .bgColor {
 	background-color: #008cee;
@@ -165,4 +166,10 @@ html,
 	background: darkseagreen;
 	color: #fff;
 	height: 100%;
+}
+.ivu-menu-item {
+	color:#fff;
+}
+.ivu-menu-light.ivu-menu-horizontal .ivu-menu-item, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu {
+	color:#fff;
 }

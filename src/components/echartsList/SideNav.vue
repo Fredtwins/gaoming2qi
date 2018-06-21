@@ -1,17 +1,16 @@
 <template>
     <div class="leftnav">
-        <Col span="3">
-        <Menu active-name="multiple" width="auto" @on-select="changeActive">
-            <Submenu name="1" v-for="(item,index) in dataArr" :key="index">
-                <template slot="title">
-                    <span>{{item.text}}</span>
-                </template>
-                <Menu-item v-for="(i,index) in dowArr" :key="index" @click="changeActive(i.link)" style="cursor:pointer" :name="i.name">{{i.text}}</Menu-item>
-                </MenuGroup>
-            </Submenu>
-        </Menu>
-        </aside>
-        </Col>
+        <i-col span="3">
+            <Menu active-name="multiple" width="auto" @on-select="clickFn">
+                <Submenu name="1" v-for="item in dataArr" :key="item.index">
+                    <template slot="title">
+                        <span>{{item.text}}</span>
+                    </template>
+                    <Menu-item v-for="i in dowArr" :key="i.index" @click="clickFn(i.link)" style="cursor:pointer" :name="i.link">{{i.name}}</Menu-item>
+                    </MenuGroup>
+                </Submenu>
+            </Menu>
+        </i-col>
     </div>
 </template>
 
@@ -31,34 +30,33 @@ export default {
             ],
             dowArr: [
                 {
-                    text: '图形管理',
-                    name: '1-1',
-                    link: 'listcontent',
+                    // text: '图形管理',
+                    name: '图形管理',
+                    link: 'listcontent'
+                    // link: 'listcontent',
                 },
                 {
-                    text: '数据图层',
-                    name: '1-2',
+                    // text: '数据图层',
+                    name: '数据图层',
+                    link: 'shuju',
+                },
+                {
+                    // text: '折线图',
+                    name: '折线图',
                     link: '',
                 },
                 {
-                    text: '折线图',
-                    name: '1-3',
-                    link: '',
-                },
-                {
-                    text: '风力风向',
-                    name: '1-4',
+                    // text: '风力风向',
+                    name: '风力风向',
                     link: '',
                 }
             ]
         }
     },
     methods: {
-        changeActive(name) {
+        clickFn(name) {
             console.log(name);
-            if (name) {
-                this.$router.push('/home/echartsList/' + name);
-            }
+            this.$router.push('/home/echartsList/' + name);
         }
     }
 }
@@ -68,9 +66,8 @@ export default {
 <style lang="scss" scoped>
 @import url('../../common/scss/reset.scss');
 .leftnav {
-    width: 100%;
-	height: 100%;
-    background-color: #41b0ff;
-	position: relative;
+    // width: 100%;
+    height: 100%; 
+    position: relative;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="index">
+    <div class="index" style="height:100%">
         <side-nav></side-nav>
         <hr>
         <router-view></router-view>
@@ -19,4 +19,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.index {
+  height: 3.8rem;
+}
 </style>

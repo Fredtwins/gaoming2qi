@@ -18,6 +18,9 @@ const routes = [
           {
             path: '/home/echartsList/listcontent',
             component: () => import('components/echartsList/listcontent')
+          }, {
+            path: '/home/echartsList/shuju',
+            component: () => import('components/echartsList/shuju')
           }
         ]
       }

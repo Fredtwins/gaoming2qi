@@ -7,7 +7,7 @@
       <!--右边导航栏部分  -->
       <div class="right-header clear">
         <div class="topnav">
-          <Menu mode="horizontal" :theme="theme1" active-name="1" class="menlist" @on-select="clickFn">
+          <Menu mode="horizontal" class="menlist" @on-select="clickFn">
             <MenuItem v-for="(item,index) in menlist" :key="index" :name="item.name">
              <Icon :type="item.icon"></Icon> 
             {{item.title}}
@@ -58,22 +58,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import url('../../common/scss/reset.scss');
 .home {
   width: 100%;
-  height:3.8rem;
-  color: green;
+  // height:100%;
+  color: #ffffff;
   .home-header {
-    height: 100%;
+    height: 3.8rem;
     width: 100%;
+    color:#fff;
     background-color: #41b0ff;
     .log {
       float: left;
     }
     .right-header {
       float: right;
+      color: white;
       .topnav {
         .menlist {
-
         }
       }
     }
