@@ -173,3 +173,45 @@ html,
 .ivu-menu-light.ivu-menu-horizontal .ivu-menu-item, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu {
 	color:#fff;
 }
+
+.modalx {
+	margin: 0 auto;
+    .ivu-modal {
+        .ivu-modal-content {
+			border-radius: 12px;
+			width: 73rem;
+            .ivu-modal-header {
+                border-radius: 12px 12px 0 0; //              background: #008cee;
+                background: linear-gradient(#6bbaec, rgba(5, 123, 247, 0.76) 70%);
+                color: #fff;
+                text-align: center;
+                font-size: 14px;
+                font-weight: bold;
+                .ivu-modal-header-inner {
+                    color: #fff;
+                    text-align: center;
+                }
+            }
+            .ivu-modal-close {
+                i {
+                    color: #fff;
+                }
+            }
+            .ivu-modal-body {
+                padding-top: 20px;
+                height: 560px; //              overflow: auto;
+                li {
+                    margin: 5px 0;
+                    position: relative;
+                    padding-left: 40px;
+                    .departmentName {
+                        position: absolute;
+                        left: 0;
+                        color: #303030;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}

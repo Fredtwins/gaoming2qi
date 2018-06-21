@@ -1,13 +1,13 @@
 <template>
-    <div class="index">
-      <i-col span="3">
-        <side-nav></side-nav>
-      </i-col>
-        <hr>
-        <i-col span="21">
-        <router-view></router-view>
-        </i-col>
-    </div>
+  <div class="index">
+    <i-col span="3">
+      <side-nav></side-nav>
+    </i-col>
+    <hr>
+    <i-col span="21">
+      <router-view></router-view>
+    </i-col>
+  </div>
 </template>
 
 <script>

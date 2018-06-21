@@ -42,6 +42,20 @@ export function listecharts(that) {
                     }, '编辑'),
                     h('Button', {
                         props: {
+                            type: 'success',
+                            size: 'small'
+                        },
+                        style: {
+                            marginRight: '5px'
+                        },
+                        on: {
+                            click: () => {
+                                that.loooklist(cloneObj(param.row))
+                            }
+                        }
+                    },'查看'),
+                    h('Button', {
+                        props: {
                             type: 'error',
                             size: 'small'
                         },
@@ -50,7 +64,7 @@ export function listecharts(that) {
                                 that.del(cloneObj(param.row))
                             }
                         }
-                    }, '删除')
+                    }, '删除'),
                 ])
             }
         }

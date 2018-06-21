@@ -1,6 +1,17 @@
 <template>
   <div class="listcontent">
     <Table border :columns="columns1" :data="data1"></Table>
+    <template>
+        <Modal v-model="looklists" class="modalx">
+           <div slot="header" ref="inter">{{updateTitle}}</div>
+           <Form :model="formItem">
+              <p>111111111</p>
+              <p>111111111</p>
+              <p>111111111</p>
+              <p>111111111</p>
+           </Form>
+			  </Modal>
+    </template>
   </div>
 </template>
 
@@ -9,6 +20,9 @@ import { listecharts } from 'common/js/table'
 export default {
   data () {
     return {
+      formItem: {},
+      updateTitle: '图形',
+      looklists: false,
       columns1: listecharts(this),
       data1: [
         {
@@ -48,7 +62,11 @@ export default {
     edit () {
 
     },
-    del () {}
+    del () {},
+    // 点击查看，出现模态框
+    loooklist () {
+      this.looklists = true
+    }
   }
 }
 </script>
