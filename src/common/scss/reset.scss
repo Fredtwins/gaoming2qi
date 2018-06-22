@@ -215,3 +215,34 @@ html,
         }
     }
 }
+
+.table {
+	padding-top:30px;
+    margin-bottom: 20px;
+    thead {
+        th {
+            background: #19bcff;
+            color: #fff;
+        }
+    }
+    .ivu-table-small th {
+        height: 36px !important;
+    }
+    .ivu-table-small td {
+        height: 0.36rem;
+    }
+}
+
+.ivu-breadcrumb {
+	font-size: 20px;
+	padding:20px 0 20px 20px;
+}
+
+.ivu-collapse {
+	color: #fff;
+	background: linear-gradient(#6bbaec, rgba(5, 123, 247, 0.76) 70%);
+}
+
+.ivu-collapse>.ivu-collapse-item>.ivu-collapse-header {
+	color: #fff;
+}

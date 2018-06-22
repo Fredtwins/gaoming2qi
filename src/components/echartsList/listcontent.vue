@@ -1,14 +1,34 @@
 <template>
   <div class="listcontent">
-    <Table border :columns="columns1" :data="data1"></Table>
-    <template>
-        <Modal v-model="looklists" class="modalx">
-           <div slot="header" ref="inter">{{updateTitle}}</div>
-            <Form :model="formItem"> 
+    <Breadcrumb class="listtop">
+        <Breadcrumb-item class="black">图形</Breadcrumb-item>
+        <Breadcrumb-item class="blue">图形管理</Breadcrumb-item>
+      </Breadcrumb>
+    <Collapse class="aa">
+      <Panel name="1">
+        条件筛选
+        <template slot="content">
+          <Form ref="formInline" :model="formInline" inline :label-width="80">
+            <Form-item label="用户账号">
+              <Input :maxlength="16" placeholder="请输入账号"></Input>
+            </Form-item>
+            <Button type="primary" @click="submitSearch">搜索</Button>
+          </Form>
+        </template>
+        <template>
+          <Modal v-model="looklists" class="modalx">
+            <div slot="header" ref="inter">{{updateTitle}}</div>
+            <Form :model="formItem">
+              <Button type="primary">新增</Button>
               <div id="main" class="main" style="width: 72rem;height: 530px"></div>
-            </Form> 
-			  </Modal>
-    </template>
+            </Form>
+          </Modal>
+        </template>
+      </Panel>
+    </Collapse>
+    <div class="center table">
+      <Table border :columns="columns1" :data="data1"></Table>
+    </div>
   </div>
 </template>
 
@@ -17,9 +37,10 @@
 import echarts from 'echarts'
 import { listecharts } from 'common/js/table'
 export default {
-  data () {
+  data() {
     return {
       // option: {},
+      formInline: {},
       formItem: {},
       updateTitle: '图形',
       looklists: false,
@@ -59,44 +80,46 @@ export default {
     }
   },
   methods: {
-    edit () {
+    edit() {
 
     },
-    del () {},
+    del() { },
     // 点击查看，出现模态框
-    loooklist () {
+    loooklist() {
       this.looklists = true
       this.collectionChart()
     },
-    collectionChart () {
+    collectionChart() {
       // let option = {}
       let myChart = echarts.init(document.getElementById('main'));
       // console.log(myChart)
       let option = {
-            title: {
-                text: 'ECharts 入门示例'
-            },
-            tooltip: {},
-            legend: {
-                data:['销量']
-            },
-            xAxis: {
-                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
-            },
-            yAxis: {},
-            series: [{
-                name: '销量',
-                type: 'bar',
-                data: [5, 20, 36, 10, 10, 20]
-            }]
-        }
-        myChart.setOption(option);
-        // console.log(option);
-        
+        title: {
+          text: 'ECharts 入门示例'
+        },
+        tooltip: {},
+        legend: {
+          data: ['销量']
+        },
+        xAxis: {
+          data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+        },
+        yAxis: {},
+        series: [{
+          name: '销量',
+          type: 'bar',
+          data: [5, 20, 36, 10, 10, 20]
+        }]
+      }
+      myChart.setOption(option);
+      // console.log(option);
+    },
+    submitSearch() {
+
     }
   },
   mounted() {
-    
+
   }
 }
 /* eslint-enable */
@@ -105,5 +128,13 @@ export default {
 <style lang="scss" scoped>
 .listcontent {
   width: 100%;
+  .listtop {
+    .black {
+
+    }
+    .blue {
+
+    }
+  }
 }
 </style>
