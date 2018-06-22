@@ -4,22 +4,22 @@
     <template>
         <Modal v-model="looklists" class="modalx">
            <div slot="header" ref="inter">{{updateTitle}}</div>
-           <Form :model="formItem">
-              <p>111111111</p>
-              <p>111111111</p>
-              <p>111111111</p>
-              <p>111111111</p>
-           </Form>
+            <Form :model="formItem"> 
+              <div id="main" class="main" style="width: 72rem;height: 530px"></div>
+            </Form> 
 			  </Modal>
     </template>
   </div>
 </template>
 
 <script>
+/* eslint-disable */
+import echarts from 'echarts'
 import { listecharts } from 'common/js/table'
 export default {
   data () {
     return {
+      // option: {},
       formItem: {},
       updateTitle: '图形',
       looklists: false,
@@ -66,9 +66,40 @@ export default {
     // 点击查看，出现模态框
     loooklist () {
       this.looklists = true
+      this.collectionChart()
+    },
+    collectionChart () {
+      // let option = {}
+      let myChart = echarts.init(document.getElementById('main'));
+      // console.log(myChart)
+      let option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        }
+        myChart.setOption(option);
+        // console.log(option);
+        
     }
+  },
+  mounted() {
+    
   }
 }
+/* eslint-enable */
 </script>
 
 <style lang="scss" scoped>

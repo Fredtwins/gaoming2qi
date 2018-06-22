@@ -7,13 +7,14 @@ import store from './store'
 import App from './App'
 import iView from 'iview'
 import axios from 'axios'
-
+import echarts from 'echarts'
 import 'common/scss/reset'
 import 'iview/dist/styles/iview.css'
 
 Vue.use(VueRouter)
 Vue.use(iView)
 Vue.use(axios)
+Vue.use(echarts)
 
 /* eslint-disable */
 new Vue({ // eslint-disable-line
