@@ -19,10 +19,30 @@
           <Modal v-model="looklists" class="modalx">
             <div slot="header" ref="inter">{{updateTitle}}</div>
             <Form :model="formItem">
-              <Button class="addbtn" type="primary" @click="addbtn">雨量</Button>
+              <Button class="addbtn" type="error">柱形图</Button>
               <Button class="addbtn" type="success" @click="fengbtn">风力</Button>
-              <Button class="addbtn" type="error" @click="listbtns">柱形图</Button>
+              <Button class="addbtn" type="primary" @click="addbtn">雨量</Button>
               <div id="main" class="main" style="width: 72rem;height: 530px"></div>
+            </Form>
+          </Modal>
+
+          <Modal v-model="looklist" class="modalx">
+            <div slot="header" ref="inter">{{updateTitle}}</div>
+            <Form :model="formItem">
+              <Button class="addbtn" type="error" @click="listbtns">柱形图</Button>
+              <Button class="addbtn" type="success">风力</Button>
+              <Button class="addbtn" type="primary" @click="addbtn">雨量</Button>
+              <div id="fengli" class="main" style="width: 72rem;height: 530px"></div>
+            </Form>
+          </Modal>
+
+          <Modal v-model="looklistx" class="modalx">
+            <div slot="header" ref="inter">{{updateTitle}}</div>
+            <Form :model="formItem">
+              <Button class="addbtn" type="error" @click="listbtns">柱形图</Button>
+              <Button class="addbtn" type="success" @click="fengbtn">风力</Button>
+              <Button class="addbtn" type="primary">雨量</Button>
+              <div id="zhexian" class="main" style="width: 72rem;height: 530px"></div>
             </Form>
           </Modal>
         </template>
@@ -41,7 +61,8 @@ import { listecharts } from 'common/js/table'
 export default {
   data() {
     return {
-      // option: {},
+      looklist: false,
+      looklistx: false,
       formInline: {},
       formItem: {},
       updateTitle: '图形',
@@ -91,6 +112,7 @@ export default {
       this.looklists = true
       this.collectionChart()
     },
+    // 柱形图
     collectionChart() {
       // let option = {}
       let myChart = echarts.init(document.getElementById('main'));
@@ -116,8 +138,9 @@ export default {
       myChart.setOption(option);
       // console.log(option);
     },
+    // 折线图
     addbtnslist() {
-      let myChart = echarts.init(document.getElementById('main'));
+      let myChart = echarts.init(document.getElementById('zhexian'));
       let option = {
         title: {
           text: '折线图堆叠'
@@ -185,11 +208,16 @@ export default {
     submitSearch() {
 
     },
+    // 点击折线图按钮时候
     addbtn() {
       this.addbtnslist()
+      this.looklist = false;
+      this.looklists = false;
+      this.looklistx = true;
     },
+    //风力图
     fenglist() {
-      let myChart = echarts.init(document.getElementById('main'));
+      let myChart = echarts.init(document.getElementById('fengli'));
       let option = {
         title: {
           text: '基础雷达图'
@@ -219,7 +247,7 @@ export default {
         },
         series: [{
           name: '预算 vs 开销（Budget vs spending）',
-          // type: 'radar',
+          type: 'radar',
           // areaStyle: {normal: {}},
           data: [
             {
@@ -235,11 +263,18 @@ export default {
       };
       myChart.setOption(option);
     },
+    //点击风力图
     fengbtn() {
-      this.fenglist()
+      this.fenglist();
+      this.looklist = true;
+      this.looklists = false;
+      this.looklistx = false;
     },
     listbtns() {
       this.collectionChart()
+      this.looklists = true;
+      this.looklist = false;
+      this.looklistx = false;
     }
   },
   mounted() {
