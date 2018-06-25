@@ -6,7 +6,6 @@ import iView from 'iview';
 
 iView.LoadingBar.config({
 	height: 3,
-	// color: '#47cb89'
 	color: '#ff7f27'
 })
 

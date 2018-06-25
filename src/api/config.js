@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { getUserIng } from 'common/js/util'
 
 let hostname = location.hostname;
@@ -129,11 +130,10 @@ export function options() {
 		headers: {
 			token: user.token,
 			// info: getUserIng()
-
 		}
 	}
 }
 
 //自定义错误标识
 export const ERR_CUSTOM = '2000';
-
+/* eslint-enable */
